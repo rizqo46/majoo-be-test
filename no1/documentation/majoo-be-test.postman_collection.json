@@ -1,0 +1,440 @@
+{
+	"info": {
+		"_postman_id": "23331bcc-9255-4de4-9e00-96e446985277",
+		"name": "majoo-be-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"admin1\",\n    \"password\": \"admin1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/user/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login error wong password",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"admin1\",\n    \"password\": \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Feb 2022 02:59:11 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "66"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Login error please check your username and password\"\n}"
+				},
+				{
+					"name": "Login Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"admin1\",\n    \"password\": \"admin1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Authorization",
+							"value": "<JWT>"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "access-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDU4NDQ1MjN9.zWmpYDN3Etl0NO2ffJStlZOAjVhZ62U7bsZMyub28sM; Path=/; Expires=Sat, 26 Feb 2022 03:02:03 GMT; HttpOnly"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Feb 2022 02:59:33 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"response\": \"login success\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Merchant By ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"admin1\",\n    \"password\": \"admin1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/merchant/1?limit=3&page=1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"merchant",
+						"1"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "3"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"admin1\",\n    \"password\": \"admin1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/merchant/1?limit=3&page=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"merchant",
+								"1"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "3"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Feb 2022 03:10:47 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "270"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"pagination\": {\n        \"limit\": 3,\n        \"page\": 1,\n        \"total_rows\": 30,\n        \"total_pages\": 10\n    },\n    \"data\": [\n        {\n            \"merchant_name\": \"merchant 1\",\n            \"omzet\": 6500,\n            \"date\": \"2021-11-01\"\n        },\n        {\n            \"merchant_name\": \"merchant 1\",\n            \"omzet\": 8500,\n            \"date\": \"2021-11-02\"\n        },\n        {\n            \"merchant_name\": \"merchant 1\",\n            \"omzet\": 6500,\n            \"date\": \"2021-11-03\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Not allowed to see the data",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"admin1\",\n    \"password\": \"admin1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/merchant/2?limit=3&page=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"merchant",
+								"2"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "3"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Feb 2022 03:11:06 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "50"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"you are not allowed to see the data\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Outlet By ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"admin1\",\n    \"password\": \"admin1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/merchant/outlet/1?limit=5&page=2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"merchant",
+						"outlet",
+						"1"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "5"
+						},
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Not allowed to see the data",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"admin1\",\n    \"password\": \"admin1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/merchant/outlet/3?limit=5&page=2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"merchant",
+								"outlet",
+								"3"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Feb 2022 03:11:23 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "50"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"you are not allowed to see the data\"\n}"
+				},
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"admin1\",\n    \"password\": \"admin1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/merchant/outlet/1?limit=5&page=2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"merchant",
+								"outlet",
+								"1"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 26 Feb 2022 03:11:44 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "507"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"pagination\": {\n        \"limit\": 5,\n        \"page\": 2,\n        \"total_rows\": 30,\n        \"total_pages\": 6\n    },\n    \"data\": [\n        {\n            \"merchant_name\": \"merchant 1\",\n            \"outlet_name\": \"Outlet 1\",\n            \"omzet\": 0,\n            \"date\": \"2021-11-06\"\n        },\n        {\n            \"merchant_name\": \"merchant 1\",\n            \"outlet_name\": \"Outlet 1\",\n            \"omzet\": 0,\n            \"date\": \"2021-11-07\"\n        },\n        {\n            \"merchant_name\": \"merchant 1\",\n            \"outlet_name\": \"Outlet 1\",\n            \"omzet\": 0,\n            \"date\": \"2021-11-08\"\n        },\n        {\n            \"merchant_name\": \"merchant 1\",\n            \"outlet_name\": \"Outlet 1\",\n            \"omzet\": 0,\n            \"date\": \"2021-11-09\"\n        },\n        {\n            \"merchant_name\": \"merchant 1\",\n            \"outlet_name\": \"Outlet 1\",\n            \"omzet\": 0,\n            \"date\": \"2021-11-10\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
