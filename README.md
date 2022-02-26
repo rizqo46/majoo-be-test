@@ -7,7 +7,7 @@ Sebelum menjalankan server kita perlu setup environement mulai dari database, jw
 
 Untuk menjalankan server dapat di run command berikut:
 ```
-go run main.go
+go run no1/main.go
 ```
 
 ### Postman Documentation
