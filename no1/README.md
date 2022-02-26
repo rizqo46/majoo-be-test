@@ -39,4 +39,4 @@ G. Dari test case pada point C dan point D, apakah struktur ERD yang dibentuk su
 - Untuk menjawab pertanyaan di atas menurut saya harus melihat PRD secara utuh. jik ahanya dari soal saja menurut saya pernu dibuat suatu table yang berisi tanggal sehingga bisa mudah untuk query disetiap tanggalnya.
 
 H. Dokumen teknis Data Manipulation. ✔
-- Dokumen ada pada folder __no1/documentation__.
+- Dokumen ada pada folder __no1/documentation/data-manipulation.sql__.
