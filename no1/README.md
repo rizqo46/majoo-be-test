@@ -34,7 +34,9 @@ miliknya (10 point) ✔
 F. Pada poin D pastikan user tidak bisa melakukan akses laporan pada outlet_id yang bukan
 miliknya (5 point) ✔
 
-G. Dari test case pada point C dan point D, apakah struktur ERD yang dibentuk sudah optimal
+G. Dari test case pada point C dan point D, apakah struktur ERD yang dibentuk sudah optimal ✔
 ? berikan penjelasannya (9 point)
+- Untuk menjawab pertanyaan di atas menurut saya harus melihat PRD secara utuh. jik ahanya dari soal saja menurut saya pernu dibuat suatu table yang berisi tanggal sehingga bisa mudah untuk query disetiap tanggalnya.
 
-H. Dokumen teknis Data Manipulation.
+H. Dokumen teknis Data Manipulation. ✔
+- Dokumen ada pada folder __no1/documentation__.

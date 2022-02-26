@@ -59,7 +59,7 @@ func (r *merchantRepoImpl) GetMerchantOmzet(merchantID, limit, page int) (*util.
 		},
 	}
 
-	if err := r.dB.Debug().Transaction(func(tx *gorm.DB) error {
+	if err := r.dB.Transaction(func(tx *gorm.DB) error {
 		createDumbDateTable(tx)
 		if err := tx.Raw(`SELECT ? as merchant_name, DATE_FORMAT(date, "%Y-%m-%d") as date, omzet FROM temp_date AS D LEFT JOIN
 		(SELECT m.id, m.merchant_name, SUM(t.bill_total) as omzet, DATE(DATE_FORMAT(t.created_at, "%Y-%m-%d")) AS datef
